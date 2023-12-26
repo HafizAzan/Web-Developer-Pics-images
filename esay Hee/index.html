@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Love Card</title>
+    <link rel="shourtcut icon" type="icon" href="./heart.jpg">
+</head>
+<style>
+
+body{
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#Center{
+    width: 40%;
+    height: 300px;
+    background-color: pink;
+    margin-top: 100px;
+    box-shadow: 12px 4px 11px black;
+    text-align: center;
+}
+#Love{
+    text-align: center;
+    border-bottom: 10px solid black;
+    color: blue;
+    animation-name: moveInLeft;
+    animation-duration: 5s;
+}
+@keyframes moveInLeft {
+    0% {
+      opacity: -100; /* gayab hojaegi */
+      transform: translateX(-100px);
+    }
+    80% {
+      transform: translateX(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+@keyframes fadeIn {
+        from {
+        opacity: 0;
+        }
+        to {
+        opacity:3;
+        }
+}
+#Love1{
+    text-align: center;
+    border-bottom: 10px solid black;
+    color: red;
+    animation: fadeIn 5s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#btn{
+    text-align: center;
+    background-color: rgb(119, 36, 171);
+    border: 2px solid white;
+    color: white;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+#btn:hover{
+    animation-delay: 3s;
+    cursor: pointer;
+    background-color: skyblue;
+    color: red;
+}
+
+@media(max-width: 900px){
+    #Center{
+        height: 300px;
+        width: 85%;
+    }   
+}
+
+</style>
+<body>
+    
+    <div id="Center">
+        <h1 id="Love1"><span>&hearts;</span>My Love<span>&hearts;</span></h1>
+        <h2 id="Love">Ek Baat Bataun Phelai btn Pr Click kren</h2>
+
+        <button id="btn" type="submit">Click This Btn</button>
+    </div>
+
+
+    <script>
+
+        const btn = document.querySelector("#btn");
+        const Love = document.querySelector("#Love")
+        btn.addEventListener("click",function(e){
+        e.preventDefault();
+        if(Love.innerText == "Ek Baat Bataun Phelai btn Pr Click kren"){
+            Love.innerHTML = "I Love You So Much Ayeza"
+        }
+        else if(Love.innerText == "I Love You So Much Ayeza" ){
+            Love.innerHTML = "Mai Bht Pyaar Krta Hun & Apke Bina Rah Nhi Skta."   
+        }
+        else{
+           return Love.innerHTML = "Aur Mujhe Na Gussa Kaafi Ata Hai Tw SORRY!"
+        }
+        console.log("btn working")
+        });
+
+
+
+
+    </script>
+</body>
+</html>
